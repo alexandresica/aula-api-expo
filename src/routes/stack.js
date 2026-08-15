@@ -5,6 +5,7 @@ import HomeScreen from '../telas/home';
 import CadUsuarioScreen from '../telas/cad-usuario';
 import RecSenhaScreen from '../telas/recSenha';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Tabnavigator from './tabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,11 @@ function RootStack() {
     <Stack.Navigator 
       initialRouteName='login'
       screenOptions={{
-      headerStyle: { backgroundColor: 'tomato' },
+        headerStyle: { backgroundColor: 'tomato' },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
       }}
     >
       <Stack.Screen 
@@ -23,7 +28,7 @@ function RootStack() {
        />
       <Stack.Screen 
         name="home" 
-        component={HomeScreen}
+        component={Tabnavigator}
         options={{ title: 'Home' }}
       />
       <Stack.Screen 
@@ -34,7 +39,17 @@ function RootStack() {
       <Stack.Screen
         name="recSenha" 
         component={RecSenhaScreen}
-        options={{ title: 'Recuperação de senha' }}
+        options={{ 
+          title: 'Recuperação de senha' ,
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+        
       />
     </Stack.Navigator>
   );
