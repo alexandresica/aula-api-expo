@@ -29,7 +29,7 @@ function RootStack() {
       <Stack.Screen 
         name="home" 
         component={Tabnavigator}
-        options={{ title: 'Home' }}
+        options={{ title: 'Home', headerShown: false}}
       />
       <Stack.Screen 
         name="cadUsu" 
